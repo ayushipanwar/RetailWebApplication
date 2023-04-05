@@ -1,0 +1,26 @@
+.card{
+    height: 60vh;
+    margin: 25px;
+    padding: 50px;
+}
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text {
+    text-align: center;
+}
+// .center img{
+//     text-decoration: none;
+//     color: inherit;
+//     border:none;
+//     outline: none;
+//     height: 162px;
+//     width: 25px;
+//     margin: 20px 0px;
+
+// }

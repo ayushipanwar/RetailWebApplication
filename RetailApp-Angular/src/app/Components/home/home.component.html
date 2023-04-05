@@ -1,0 +1,38 @@
+<header>
+  <div class="navbar">
+    <div class="navbar-brand align-item-center d-flex" >
+      <!-- <i  style="font-size: 40px;"class="fas fa-shipping-fast">&nbsp;
+      </i> -->
+      <div routerLink="catalog">
+      <strong style="font-size: 30px;">
+        Retail App
+      </strong>
+    </div>
+      <div >
+        <form [formGroup]="inputForm">
+<input type="text" class="form-control" placeholder="search products"  matInput formControlName="input" name="input"  class="form-control">
+<span  class="fas fa-search search-icon" (click)="handleSubmit()" routerLink="search"></span>
+</form>
+      </div>
+      <span  class="fas fa-search search-icon" (click)="handleSubmit()" routerLink="search"></span>
+      
+    </div  >
+      <ul *ngIf="flag == false">
+        <button style="margin: 5px;" class="btn btn-primary" (click)="handleSignupAction()" >Signup</button>
+        <button  style="margin-right: 15px;" class="btn btn-secondary" (click)="handleLoginAction()" >Login</button>
+       <!-- <a (click)="handleSignupAction()"></a>
+          <a  (click)="handleLoginAction()">Login </a> -->
+      </ul>
+   
+      <div *ngIf="flag === true" >
+      
+    <button class="btn btn-blue" routerLink="cart">
+      <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+      <div style="font-size: 10px;" class="badge bg-Blue"></div>
+    </button>
+    <button routerLink="header" class="btn btn-primary" (click)="logoutAction()" routerLink="search">
+      LogOut
+  </button>
+  </div>
+  </div>
+</header>

@@ -1,0 +1,78 @@
+<div class="container">
+   <div class="left">
+    <h3>
+Billing Adress
+    </h3>
+    <form [formGroup]="deliveryDetail">
+      Full name
+      <input type="text" placeholder="Enter Full Name" matInput formControlName="name"  name="name" class="form-control">
+      contactNumber
+      <input type="text" placeholder="Enter Your Contact Number" matInput formControlName="contactNumber" name="contactNumber"  class="form-control">
+      Adsress
+      <input type="text" placeholder="Enter Adress" matInput formControlName="address" name="address"  class="form-control">
+      City
+      <input type="text" placeholder="Enter City" matInput formControlName="city" name="city"  class="form-control">
+      <div id="zip">
+        <label>State
+          <select>
+              <option> Mumbai</option>
+            <option> Banglore</option>
+            <option>UP</option>
+            <option> HyderaBad</option>
+          </select>
+        </label>
+        <label>Pin Code
+          <input type="number" placeholder="Pin Code" minlength="6" maxlength="6" name="pinCode" matInput formControlName="pinCode"  class="form-control">
+        </label>
+      </div>
+    </form>
+  </div> 
+  <div class="right">
+    <h3>
+      
+          </h3>
+          
+<div class="container"  class="style" style="float:left;">
+</div>
+<div style="height: 400px;">  
+  <div class="row">
+    <div class="col-md-4 order-md-2 mb-4">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Your cart</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+        </h4>
+        <ul class="list-group mb-3 sticky-top" style="width: 350px;">
+            <li class="list-group-item d-flex justify-content-between lh-condensed" *ngFor="let item of cartItems">
+                <div style="flex-direction: row;">
+                  <!-- <img style="height:50px; width: 50px;" src="{{item.prod_image}}"> -->
+                  <div style="display: grid;">
+                  <h5 class="my-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 30ch;">{{item.prod_name}}</h5>
+                    <h6 >Quantity    1</h6>
+                  </div> 
+                </div>
+                
+              <span class="text-muted">{{item.prod_price}}</span>
+                
+             
+            </li>
+            <!-- <li class="list-group-item d-flex justify-content-between bg-light">
+                <div class="text-success">
+                    <h6 class="my-0">Promo code</h6>
+                    <small>EXAMPLECODE</small>
+                </div>
+                <span class="text-success">-$5</span>
+            </li> -->
+            <li class="list-group-item d-flex justify-content-between">
+                <span>Total (INR)</span>
+                <strong>{{totalAmount|currency:'INR'}}</strong>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <button mat-raised-button color="primary"   class="btn btn-success" type="submit" (click)="handleSubmit()" >
+    <mat-icon>payment</mat-icon>
+Pay Now
+</button>
+  </div>
+</div>
